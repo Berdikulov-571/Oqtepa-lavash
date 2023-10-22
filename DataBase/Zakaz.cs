@@ -14,4 +14,6 @@ public partial class Zakaz
     public DateTime? CreatedDate { get; set; }
 
     public string? PhoneNumber { get; set; }
+
+    public long Id { get; set; }
 }

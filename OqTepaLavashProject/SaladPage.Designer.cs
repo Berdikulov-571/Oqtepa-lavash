@@ -236,6 +236,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "SaladPage";
             Text = "SaladPage";
+            Load += SaladPage_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

@@ -40,93 +40,93 @@ namespace OqTepaLavashProject
                 }
                 contexts.SaveChanges();
 
-                //if (textBox3.Text.Length >= 6)
-                //{
-                //    count++;
-                //    registration.Name = textBox3.Text;
-                //}
-                //else
-                //{
-                //    textBox3.ForeColor = Color.Red;
-                //    textBox3.PlaceholderText = "Error Name";
-                //    textBox3.Text = "";
-                //}
-
-                //if (textBox2.Text.Length >= 6)
-                //{
-                //    count++;
-                //    registration.Number = textBox2.Text;
-                //    UserPhoneNumber = registration.Number.ToString();
-                //}
-                //else
-                //{
-                //    textBox2.ForeColor = Color.Red;
-                //    textBox2.PlaceholderText = "Error phone number";
-                //    textBox2.Text = "";
-                //}
-
-                //if (textBox4.Text.Length >= 7)
-                //{
-                //    count++;
-                //    registration.Email = textBox4.Text;
-                //}
-                //else
-                //{
-                //    textBox4.ForeColor = Color.Red;
-                //    textBox4.PlaceholderText = "Error email";
-                //    textBox4.Text = "";
-                //}
-
-                //if (textBox1.Text.Length >= 7)
-                //{
-                //    count++;
-                //    registration.Password = textBox1.Text;
-                //}
-                //else
-                //{
-                //    textBox1.ForeColor = Color.Red;
-                //    textBox1.PlaceholderText = "Error password";
-                //    textBox4.Text = "";
-                //}
-
-
-                if (textBox1.Text.Length < 6)
+                if (textBox3.Text.Length >= 6)
                 {
-                    textBox1.ForeColor = Color.Red;
-                    textBox1.Text = "Password must be 6 character";
                     count++;
+                    registration.Name = textBox3.Text;
                 }
-
-                textBox2.Text = "+998";
-                if (textBox2.Text.Length != 9)
-                {
-                    textBox2.ForeColor = Color.Red;
-                    textBox2.Text = "Error phoneNumber";
-                    textBox2.ForeColor = Color.Black;
-                    count++;
-
-                }
-
-                if (textBox3.Text.Length < 6)
+                else
                 {
                     textBox3.ForeColor = Color.Red;
-                    textBox3.Text = "Name must be 6 character";
-                    textBox3.ForeColor = Color.Black;
-                    count++;
-
+                    textBox3.PlaceholderText = "Error Name";
+                    textBox3.Text = "";
                 }
 
-                if (textBox4.Text.Any(x => x != '@'))
+                if (textBox2.Text.Length >= 6)
+                {
+                    count++;
+                    registration.Number = textBox2.Text;
+                    UserPhoneNumber = registration.Number.ToString();
+                }
+                else
+                {
+                    textBox2.ForeColor = Color.Red;
+                    textBox2.PlaceholderText = "Error phone number";
+                    textBox2.Text = "";
+                }
+
+                if (textBox4.Text.Length >= 7)
+                {
+                    count++;
+                    registration.Email = textBox4.Text;
+                }
+                else
                 {
                     textBox4.ForeColor = Color.Red;
-                    textBox4.Text = "Error email";
-                    textBox4.ForeColor = Color.Black;
-                    count++;
+                    textBox4.PlaceholderText = "Error email";
+                    textBox4.Text = "";
+                }
 
+                if (textBox1.Text.Length >= 7)
+                {
+                    count++;
+                    registration.Password = textBox1.Text;
+                }
+                else
+                {
+                    textBox1.ForeColor = Color.Red;
+                    textBox1.PlaceholderText = "Error password";
+                    textBox4.Text = "";
                 }
 
 
-                if (count == 0)
+                //if (textBox1.Text.Length != 6)
+                //{
+                //    textBox1.ForeColor = Color.Red;
+                //    textBox1.Text = "Password must be 6 character";
+                //    count++;
+                //}
+
+                ////textBox2.Text = "+998";
+                //if (textBox2.Text.Length != 0)
+                //{
+                //    textBox2.ForeColor = Color.Red;
+                //    textBox2.Text = "Error phoneNumber";
+                //    textBox2.ForeColor = Color.Black;
+                //    count++;
+
+                //}
+
+                //if (textBox3.Text.Length != 6)
+                //{
+                //    textBox3.ForeColor = Color.Red;
+                //    textBox3.Text = "Name must be 6 character";
+                //    textBox3.ForeColor = Color.Black;
+                //    count++;
+
+                //}
+
+                //if (textBox4.Text.Any(x => x != '@'))
+                //{
+                //    textBox4.ForeColor = Color.Red;
+                //    textBox4.Text = "Error email";
+                //    textBox4.ForeColor = Color.Black;
+                //    count++;
+
+                //}
+
+
+                if (count == 4)
                 {
                     contexts.Add(registration);
                     contexts.SaveChanges();
@@ -186,6 +186,11 @@ namespace OqTepaLavashProject
         }
 
         private void backgroundWorker1_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

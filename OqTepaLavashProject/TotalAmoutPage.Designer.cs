@@ -38,6 +38,7 @@
             label7 = new Label();
             label8 = new Label();
             button_woc2 = new ePOSOne.btnProduct.Button_WOC();
+            button_woc3 = new ePOSOne.btnProduct.Button_WOC();
             SuspendLayout();
             // 
             // label1
@@ -170,12 +171,32 @@
             button_woc2.UseVisualStyleBackColor = true;
             button_woc2.Click += button_woc2_Click;
             // 
+            // button_woc3
+            // 
+            button_woc3.BorderColor = Color.White;
+            button_woc3.ButtonColor = Color.Red;
+            button_woc3.FlatStyle = FlatStyle.Flat;
+            button_woc3.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            button_woc3.ForeColor = Color.White;
+            button_woc3.Location = new Point(153, 817);
+            button_woc3.Name = "button_woc3";
+            button_woc3.OnHoverBorderColor = Color.White;
+            button_woc3.OnHoverButtonColor = Color.GreenYellow;
+            button_woc3.OnHoverTextColor = Color.Red;
+            button_woc3.Size = new Size(216, 44);
+            button_woc3.TabIndex = 11;
+            button_woc3.Text = "Delivery";
+            button_woc3.TextColor = Color.White;
+            button_woc3.UseVisualStyleBackColor = true;
+            button_woc3.Click += button_woc3_Click;
+            // 
             // TotalAmoutPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1213, 881);
+            Controls.Add(button_woc3);
             Controls.Add(button_woc2);
             Controls.Add(label8);
             Controls.Add(label7);
@@ -189,6 +210,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "TotalAmoutPage";
             Text = "TotalAmoutPage";
+            Load += TotalAmoutPage_Load;
             ResumeLayout(false);
         }
 
@@ -204,5 +226,6 @@
         private Label label7;
         private Label label8;
         private ePOSOne.btnProduct.Button_WOC button_woc2;
+        private ePOSOne.btnProduct.Button_WOC button_woc3;
     }
 }

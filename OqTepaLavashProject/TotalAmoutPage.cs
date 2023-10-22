@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataBase;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -97,6 +98,18 @@ namespace OqTepaLavashProject
                 Hide();
                 menu.Show();
             }
+        }
+
+        private void TotalAmoutPage_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_woc3_Click(object sender, EventArgs e)
+        {
+            DeliveryPage deliveryPage = new DeliveryPage();
+            Hide();
+            deliveryPage.Show();
         }
     }
 }

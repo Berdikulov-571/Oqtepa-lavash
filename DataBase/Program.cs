@@ -21,6 +21,8 @@ namespace DataBase
             //    contexts.Add(register);
             //    contexts.SaveChanges();
             //}
+
+            Console.WriteLine("salom");
         }
     }
 }

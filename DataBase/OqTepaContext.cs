@@ -15,6 +15,8 @@ public partial class OqTepaContext : DbContext
     {
     }
 
+    public virtual DbSet<Deliver> Delivers { get; set; }
+
     public virtual DbSet<Registration> Registrations { get; set; }
 
     public virtual DbSet<Zakaz> Zakazs { get; set; }
@@ -25,6 +27,21 @@ public partial class OqTepaContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<Deliver>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("deliver_pkey");
+
+            entity.ToTable("deliver");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Name)
+                .HasMaxLength(50)
+                .HasColumnName("name");
+            entity.Property(e => e.PhoneNumber)
+                .HasMaxLength(20)
+                .HasColumnName("phone_number");
+        });
+
         modelBuilder.Entity<Registration>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("registration_pkey");
@@ -52,12 +69,13 @@ public partial class OqTepaContext : DbContext
 
         modelBuilder.Entity<Zakaz>(entity =>
         {
-            entity
-                .HasNoKey()
-                .ToTable("zakaz");
+            entity.HasKey(e => e.Id).HasName("zakaz_pkey");
 
+            entity.ToTable("zakaz");
+
+            entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedDate)
-                .HasDefaultValueSql("now()")
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("created_date");
             entity.Property(e => e.NameOfProduct)
@@ -67,7 +85,7 @@ public partial class OqTepaContext : DbContext
                 .HasMaxLength(50)
                 .HasColumnName("num_of_product");
             entity.Property(e => e.PhoneNumber)
-                .HasMaxLength(32)
+                .HasMaxLength(50)
                 .HasColumnName("phone_number");
             entity.Property(e => e.Price).HasColumnName("price");
         });

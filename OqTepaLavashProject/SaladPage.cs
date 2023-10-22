@@ -163,5 +163,10 @@ namespace OqTepaLavashProject
                 menuPage.Show();
             }
         }
+
+        private void SaladPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
